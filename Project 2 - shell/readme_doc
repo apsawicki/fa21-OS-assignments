@@ -1,0 +1,153 @@
+readme_doc: a comprehensive document to help you operate the shell
+
+Built-in Commands:
+
+
+cd - change the working directory
+
+The cd command takes in any number of arguments, however it will only use the first argument, and it will change the working directory of the shell’s environment
+
+Usage: “cd”, “cd [arg1]”, “cd [arg1] [arg2] [arg3] [...]”
+
+   1. If no arguments are given to the cd command, meaning the command would look like this “cd” instead of “cd [arg1] [arg2] [arg3]” then the command will print the contents of the current working directory
+
+   2. If one or more arguments are given, the current working directory will change to the value of the first argument given. “cd [arg1] [arg2] [arg3]” would result in the current directory being changed to the current working directory plus [arg1] if [arg1] is a relative path, and would be completely changed to [arg1] if [arg1] is an absolute path, as well as [arg1] being a valid directory/path to change to
+
+   3. If [arg1] is NOT a valid path to change to, it will output an error telling the user that there is no such file or directory to change to. It will keep the same directory as it was before the error occurred
+
+   4. If [arg1] in the command “cd [arg1] [arg2] [arg3]” is “..” then it will change the current working directory to the parent directory of the current working directory. Furthermore, if [arg1] is “.” then it will keep the current working directory as it is
+
+
+
+clr - clear the screen
+
+The clr command takes in any number of arguments, however it won’t use any of the arguments provided, and will clear the current page of text except for a new prompt, which will wait for another command
+
+Usage: “clr”, “clr [arg1]”, “clr [arg1] [arg2] [arg3] [...]”
+
+   1. With any number of arguments given to the clr command, it will clear the screen of text and then print a new prompt for the user to give a command
+
+
+
+dir - list contents of a directory
+
+The dir command takes in any number of arguments, however it will only use the first of the arguments provided, and will print the contents of the directory provided, or the current directory if no arguments are provided
+
+Usage: “dir”, “dir [arg1]”, “dir [arg1] [arg2] [arg3] [...]”
+
+   1. With no arguments given to the dir command, it will output the contents of the current directory “dir”
+
+   2. With 1 or more arguments given to the dir command, it will output the contents of the directory specified in [arg1] from “dir [arg1]” or “dir [arg1] [arg2] [arg3] [...]”. This command will also handle the path from [arg1] being both relative and absolute
+
+
+
+environ - list all environment variables
+
+The environ command will print out each environment variable to the screen and will not use any arguments provided to the command.
+
+Usage: “environ”
+
+   1. The default setting to the command environ is without commands. Environ will print out the contents of all the environment variables to the screen
+
+   2. With 1 or more arguments, environ will perform the exact same way as specified in #1
+
+
+
+path - sets the environment variable PATH
+
+The path command will set the PATH environment variable to [arg1] if it is provided and will set it equal to “” if there are no arguments provided.
+
+Usage: “path”, “path [arg1]”, “path [arg1] [arg2] [arg3] [...]”
+
+   1. With no arguments given to the path command, it will set the PATH environment variable to “”, which means that it will be empty
+
+   2. With 1 or more arguments given to the path command, it will set the PATH equal to [arg1]
+
+   3. To set more than one path to the PATH environment variable, inside of [arg1] you would have each path delimited by a colon (:), for example, [arg1] = “[path1]:[path2]:[path3]:[...]”
+
+    4. WARNING changing the PATH environment variable’s values can result in the shell’s external command function from working correctly as the shell uses the PATH command to know where to execute from if the commands are not hard coded like the built-in commands. If you want to fix your shell, you must use the “quit” command to quit the shell and then relaunch the shell
+
+
+
+echo - will print [arg1] to the screen
+
+The echo command will repeat back what you input for [arg1] onto the display
+
+Usage: “echo [arg1]”, “echo [arg1] [arg2] [arg3] [...]”
+
+   1. With no arguments given to the echo command, it will print out an error message to the screen, letting you know that there was incorrect usage
+
+   2. With 1 or more arguments given to the echo command, it will print the contents of each argument’s string to the display. For example, “echo [arg1] [arg2] [arg3]” will print [arg1] [arg2] [arg3] with a single space between each argument
+
+
+
+help - displays this user manual
+
+The help command will display the readme_doc that you are currently reading onto the display/command line
+
+Usage: “help”, “help [arg1]”, “help [arg1] [arg2] [arg3] [...]”
+
+   1. With no arguments given to the help command, the help command will be read and then display the user manual to the
+
+   2. With 1 or more arguments given to the help command, refer to #1 as to what will happen
+
+
+
+pause - pause shell until ‘enter’ is pressed
+
+The pause command halts the shell from doing more commands until you press the enter button.
+
+Usage: “pause”, “pause [arg1]”, “pause [arg1] [arg2] [arg3] [...]”
+
+   1. With any amount of arguments (0, 1, 2, …) the pause command will not look at any of the arguments and will print a prompt that tells you to press ‘enter’ to continue the shell’s processes
+
+
+
+quit - quit the shell
+
+The quit command quits the shell and brings you back to the command line
+
+Usage: “quit”, “quit [arg1]”, “quit [arg1] [arg2] [arg3] [...]”
+
+   1. With any amount of arguments (0, 1, 2, …) the quit command will not look at any of the arguments and will quit the shell
+
+
+External Commands:
+
+External Commands are run whenever a command was run to the shell, however, the command that was typed in doesn’t correspond with any of the built-in commands within the shell. If the command was a valid command (meaning you cannot just type “hello” to run a hello command unless it is a valid command in linux)
+
+Usage:
+    1. Type the valid external command and any arguments that the specific external command would use and the shell will run the command with the given commands
+
+
+Input/Output Redirection:
+
+There are three different types of I/O redirection, writing OUTPUT, append OUTPUT, take INPUT
+
+Usage: “>”
+    1. You can write your output to a different file by using the “>” character in the command line. For example, a command like this “[command] [arg1] [arg2] [...] > [output file]” would make it so that the output from the command you run will instead go to the [output file] instead of the display like normal. Using the “>” specifically will overwrite any data you had in the [output file] you had before and replace it with the output from your command
+
+Usage: “>>”
+    2. You can append your output to a different file by using the “>>” string in the command line. For example, a command like this “[command] [arg1] [arg2] [...] >> [output file]” would make it so that the output from the command you run will instead go to the [output file] instead of the display like normal. Using the “>>” specifically will append your command’s output to the end of the data that was originally in the [output file] so it WON'T overwrite any data that was originally in the file
+
+Usage: “<”
+    3. You can make your command take input from a file by using the “<” character in the command line. For example, a command like this “[command] [arg1] [arg2] [...] < [input file]” would make it so that any command that can take input from a file will use the data that is in the input file to accomplish its task. The shell’s built-in commands don’t take in any input files, therefore, even if you have the built-in command take input, it will still only run based off of the arguments you give the command
+
+Usages: “<”, “>”, “>>”
+    4. You can chain different input and output arguments in the same command line, for example, a command like this “[command] [arg1] [arg2] [...] > [output file] < [input file]” will take input from the [input file] and run the command while outputting the command to the [output file]
+
+
+Background Execution:
+
+Background Execution will allow your command to run in a different process from your shell’s process concurrently in regards to each other. Furthermore, using background execution will allow you to also chain multiple commands together in one line. This can be useful for running commands that you want to run for a long time, days or even longer, such that it won’t make it so that you can’t use the shell because the command is running. Moreover, running multiple commands in one line can help you efficiently streamline your command line processes.
+
+Usage: “&”
+    1. The shell understands that you want to use background execution when it sees the “&” character at the end of it’s arguments (WARNING: The “&” MUST be at the end of the command’s arguments). For example, a command like this “[command] [arg1] [arg2] [...] &” will run the command concurrently with the shell as a background process. Furthermore, a command like this “[command1] [arg1] [arg2] [...] & [command2] [arg1] [arg2] [...]” will run [command1] as a background process and [command2] as a process concurrent with [command1] if [command1] takes long enough to have concurrency with [command2]). You are also able to run even more commands with background execution, like this “[command1] [arg1] [arg2] [...] & [command2] [arg1] [arg2] [...] & [command3] [arg1] [arg2] [...] & [command4] [arg1] [arg2] [...] &” and each [command] will run as their own background processes.
+
+
+Piping:
+
+Piping will allow you to take the output from a command and make it the input for another command. This not only allows you control over input and output redirection but also allows you to chain commands similarly to the background command “&” can chain commands.
+
+Usage: “|”
+    1. The shell understands that want to use the piping implementation when it sees the “|” character (WARNING: The “|” MUST be at the end of the command’s arguments). For example, a command like this “[command1] [arg1] [arg2] [...] | [command2] [arg1] [arg2] [...] | [command3] [arg1] [arg2] [...]” should use the pipe implementation to use the output from [command1] as the input for [command2] and use the output from [command2] as the input for [command3]. Therefore, we can see that we were able to chain commands on the same line, and to use I/O redirection to manipulate what a command will use as input and output.

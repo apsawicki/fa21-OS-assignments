@@ -18,7 +18,7 @@ The coding assignments given to me as a Fall 2021 Systems Programming and Operat
 
 ## [Project 2 - Developing a Linux Shell](https://github.com/apsawicki/fa21-OS-assignments/tree/main/Project%202%20-%20shell)
 * [Implementation Details](https://docs.google.com/document/d/1p9ZWYeCNLZAgZKDcsbBbTyAm4dAMoYjaGZ-jWvymUzE/edit?usp=sharing)
-* [Operation Guide](https://docs.google.com/document/d/13U733i9BwDE0N0Yi_Q2L26wAn3AaJwjJU-jXTnOpUKU/edit?usp=sharing)
+* [User Manual](https://docs.google.com/document/d/13U733i9BwDE0N0Yi_Q2L26wAn3AaJwjJU-jXTnOpUKU/edit?usp=sharing)
 
 ## [Project 3 - Networked Spell Checker](https://github.com/apsawicki/fa21-OS-assignments/tree/main/Project%203%20-%20network_spellchecker)
 * [User Manual, Design Aspects, Testing](https://docs.google.com/document/d/1QT691qc5yr4SvmS6DVeZPYKL5pi-hQqK0Op-fHtcJyI/edit?usp=sharing)

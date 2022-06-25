@@ -1,7 +1,8 @@
 # Fall 2021 Operating Systems Lab Assignments (C++)
 The coding assignments given to me as a Fall 2021 Systems Programming and Operating Systems student at Temple University.
 
-Each assignment comes with it's own README.md that was given to me as the introduction and rules to the assignment that you can get to by clicking the header of each assignment.
+* Each assignment comes with it's own README.md that has the introduction and rules to the assignment
+* Get to each assignment's README.md by clicking the header for each project below
   
 
 ## [Project 0 - Unix Utilities](https://github.com/apsawicki/fa21-OS-assignments/tree/main/Project%200%20-%20commands_and_zip)
